@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.mybatis.SysLogMapper">
+    <!-- 定义映射元素 此元素解析时会存储到一个MapperedStatement对象中 -->
+    <delete id="delectSysLog">
+        delete from sys_logs
+        where id = #{id}
+    </delete>
+    <select id="selectSysLogs" resultType="map">
+        select id,username,createdTime
+        from sys_logs
+        limit #{startIndex}, #{pageSize}
+    </select>
+</mapper>

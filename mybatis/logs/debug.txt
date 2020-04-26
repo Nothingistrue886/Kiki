@@ -1,0 +1,11 @@
+2020-04-19 15:09:22,344 DEBUG [main] org.apache.ibatis.cache.decorators.LoggingCache.getObject(62) | Cache Hit Ratio [com.company.mybatis.SysUserMapper]: 0.0
+2020-04-19 15:09:23,030 DEBUG [main] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(159) | ==>  Preparing: select id,username from sys_users where id=? 
+2020-04-19 15:09:23,138 DEBUG [main] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(159) | ==> Parameters: 16(Integer)
+2020-04-19 15:09:23,172 DEBUG [main] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(159) | <==      Total: 1
+2020-04-19 15:09:23,325 DEBUG [main] org.apache.ibatis.cache.decorators.LoggingCache.getObject(62) | Cache Hit Ratio [com.company.mybatis.SysUserMapper]: 0.5
+2020-04-19 15:09:23,325 DEBUG [main] com.company.mybatis.TestBase03.testCache(13) | thi is a dubuger
+2020-04-19 15:11:24,695 DEBUG [main] org.apache.ibatis.cache.decorators.LoggingCache.getObject(62) | Cache Hit Ratio [com.company.mybatis.SysUserMapper]: 0.0
+2020-04-19 15:11:25,477 DEBUG [main] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(159) | ==>  Preparing: select id,username from sys_users where id=? 
+2020-04-19 15:11:25,664 DEBUG [main] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(159) | ==> Parameters: 16(Integer)
+2020-04-19 15:11:25,695 DEBUG [main] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(159) | <==      Total: 1
+2020-04-19 15:11:25,836 DEBUG [main] org.apache.ibatis.cache.decorators.LoggingCache.getObject(62) | Cache Hit Ratio [com.company.mybatis.SysUserMapper]: 0.5
