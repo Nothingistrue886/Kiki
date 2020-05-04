@@ -6,17 +6,20 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * @author 疾风劲草
- * @date 2020/4/24 15:43
+ * @date 2020/4/26 1:05
  * @description TODO
  */
-
 @Mapper
 public interface SysLogMapper {
-    /**
-     * delete log by id
-     * @param id
-     * @return int
-     */
-    @Delete("delete from sys_logs where id = #{id}")
+    @Delete("delete from sys_logs where id=#{id}")
     int deleteLogById(@Param("id") Integer id);
+
+    /**
+     * delete logs by ids 动态删除
+     * @param ids
+     * @return
+     */
+    int deleteLogsById(@Param("ids") Integer... ids);
+    // 参数为数组形式
+    //int deleteLogsById(@Param("ids") Integer[] ids);
 }
