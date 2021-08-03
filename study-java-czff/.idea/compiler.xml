@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="study-video-czff.study-j-czff.main" target="1.8" />
+      <module name="study-video-czff.study-j-czff.test" target="1.8" />
+      <module name="study-video-czff.study-javase-czff.main" target="1.8" />
+      <module name="study-video-czff.study-javase-czff.test" target="1.8" />
+      <module name="study-video-czff.study-video-czff.main" target="1.8" />
+      <module name="study-video-czff.study-video-czff.test" target="1.8" />
+      <module name="study-video.study-video-czff.main" target="1.8" />
+      <module name="study-video.study-video-czff.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
