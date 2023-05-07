@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0jfbpkm" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_message_event" name="消息事件" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="开始">
+      <bpmn:outgoing>Flow_0qex2yf</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0qex2yf" sourceRef="StartEvent_1" targetRef="Activity_0375tyf" />
+    <bpmn:sequenceFlow id="Flow_1axcc0i" sourceRef="Activity_0375tyf" targetRef="Activity_15g3vs8" />
+    <bpmn:endEvent id="Event_1ynvu5m" name="结束">
+      <bpmn:incoming>Flow_03fh0yp</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_03fh0yp" sourceRef="Activity_15g3vs8" targetRef="Event_1ynvu5m" />
+    <bpmn:userTask id="Activity_0375tyf" name="用户下订单" camunda:assignee="cuidi">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="terminal" label="终端" type="enum" defaultValue="mt">
+            <camunda:value id="elm" name="饿了么" />
+            <camunda:value id="mt" name="美团" />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0qex2yf</bpmn:incoming>
+      <bpmn:outgoing>Flow_1axcc0i</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_15g3vs8" name="处理Pay" camunda:delegateExpression="${handlerPay}">
+      <bpmn:incoming>Flow_1axcc0i</bpmn:incoming>
+      <bpmn:outgoing>Flow_03fh0yp</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:startEvent id="Event_079g4b3" name="饿了么">
+      <bpmn:outgoing>Flow_02um783</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0ydkndd" messageRef="Message_3eo8l7u" />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_02um783" sourceRef="Event_079g4b3" targetRef="Activity_0gaho4n" />
+    <bpmn:startEvent id="Event_1gn8fzs" name="美团">
+      <bpmn:extensionElements />
+      <bpmn:outgoing>Flow_0ba2wbb</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0y9erir" messageRef="Message_3b0o9ro" />
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_0gaho4n" name="饿了么支付" camunda:type="external" camunda:topic="elm_topic">
+      <bpmn:incoming>Flow_02um783</bpmn:incoming>
+      <bpmn:outgoing>Flow_0o220kq</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0ba2wbb" sourceRef="Event_1gn8fzs" targetRef="Activity_0279qmb" />
+    <bpmn:sequenceFlow id="Flow_0o220kq" sourceRef="Activity_0gaho4n" targetRef="Activity_0fnik6l" />
+    <bpmn:serviceTask id="Activity_0fnik6l" name="支付成功" camunda:type="external" camunda:topic="success_pay_topic">
+      <bpmn:incoming>Flow_0o220kq</bpmn:incoming>
+      <bpmn:incoming>Flow_1bef2vz</bpmn:incoming>
+      <bpmn:outgoing>Flow_1amqt8z</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_0279qmb" name="美团支付" camunda:type="external" camunda:topic="mt_topic">
+      <bpmn:incoming>Flow_0ba2wbb</bpmn:incoming>
+      <bpmn:outgoing>Flow_1bef2vz</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_05dm94f" name="结束">
+      <bpmn:incoming>Flow_1amqt8z</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1amqt8z" sourceRef="Activity_0fnik6l" targetRef="Event_05dm94f" />
+    <bpmn:sequenceFlow id="Flow_1bef2vz" sourceRef="Activity_0279qmb" targetRef="Activity_0fnik6l" />
+  </bpmn:process>
+  <bpmn:message id="Message_3eo8l7u" name="Message_elm" />
+  <bpmn:message id="Message_3b0o9ro" name="Message_mt" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_message_event">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="159" y="145" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ynvu5m_di" bpmnElement="Event_1ynvu5m">
+        <dc:Bounds x="562" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="569" y="145" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kwqnee_di" bpmnElement="Activity_0375tyf">
+        <dc:Bounds x="240" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01b4xrs_di" bpmnElement="Activity_15g3vs8">
+        <dc:Bounds x="400" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1m6zpfe_di" bpmnElement="Event_079g4b3">
+        <dc:Bounds x="152" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="154" y="255" width="33" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_02anmaj_di" bpmnElement="Event_1gn8fzs">
+        <dc:Bounds x="152" y="322" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="159" y="365" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1npnlpi_di" bpmnElement="Activity_0gaho4n">
+        <dc:Bounds x="240" y="190" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0evjmy1_di" bpmnElement="Activity_0279qmb">
+        <dc:Bounds x="240" y="300" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_05dm94f_di" bpmnElement="Event_05dm94f">
+        <dc:Bounds x="562" y="262" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="569" y="305" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1tw0bj7_di" bpmnElement="Activity_0fnik6l">
+        <dc:Bounds x="400" y="240" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0qex2yf_di" bpmnElement="Flow_0qex2yf">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="240" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03fh0yp_di" bpmnElement="Flow_03fh0yp">
+        <di:waypoint x="500" y="120" />
+        <di:waypoint x="562" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1axcc0i_di" bpmnElement="Flow_1axcc0i">
+        <di:waypoint x="340" y="120" />
+        <di:waypoint x="400" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_02um783_di" bpmnElement="Flow_02um783">
+        <di:waypoint x="188" y="230" />
+        <di:waypoint x="240" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ba2wbb_di" bpmnElement="Flow_0ba2wbb">
+        <di:waypoint x="188" y="340" />
+        <di:waypoint x="240" y="340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0o220kq_di" bpmnElement="Flow_0o220kq">
+        <di:waypoint x="340" y="230" />
+        <di:waypoint x="370" y="230" />
+        <di:waypoint x="370" y="280" />
+        <di:waypoint x="400" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1bef2vz_di" bpmnElement="Flow_1bef2vz">
+        <di:waypoint x="340" y="340" />
+        <di:waypoint x="370" y="340" />
+        <di:waypoint x="370" y="280" />
+        <di:waypoint x="400" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1amqt8z_di" bpmnElement="Flow_1amqt8z">
+        <di:waypoint x="500" y="280" />
+        <di:waypoint x="562" y="280" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

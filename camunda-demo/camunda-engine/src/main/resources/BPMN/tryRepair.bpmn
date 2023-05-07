@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1npoffx" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.16.0">
+  <bpmn:process id="Process_external_task" name="外部任务-尝试自修流程" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1ahy720</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_0m5xa1z" name="预约修理家电" camunda:class="com.camunda.engine.servicetask.ReserveRepairService">
+      <bpmn:incoming>Flow_1ahy720</bpmn:incoming>
+      <bpmn:outgoing>Flow_1n6a9vd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_0641sln" name="师傅上门修理" camunda:delegateExpression="${doRepairService}">
+      <bpmn:extensionElements>
+        <camunda:executionListener delegateExpression="${noticeCustomer}" event="start" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0unlome</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qoixeg</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_072cc7x" name="公司电话回访" camunda:expression="${telCallService.doCall(execution)}" camunda:resultVariable="score">
+      <bpmn:incoming>Flow_1qoixeg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1kjpyz0</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_0wl2p9o" name="查看评分" camunda:expression="${telCallService.getSorce(execution)}">
+      <bpmn:incoming>Flow_1kjpyz0</bpmn:incoming>
+      <bpmn:outgoing>Flow_176onr7</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1ykcylj">
+      <bpmn:incoming>Flow_176onr7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1ahy720" sourceRef="StartEvent_1" targetRef="Activity_0m5xa1z" />
+    <bpmn:sequenceFlow id="Flow_1qoixeg" sourceRef="Activity_0641sln" targetRef="Activity_072cc7x" />
+    <bpmn:sequenceFlow id="Flow_1kjpyz0" sourceRef="Activity_072cc7x" targetRef="Activity_0wl2p9o" />
+    <bpmn:sequenceFlow id="Flow_176onr7" sourceRef="Activity_0wl2p9o" targetRef="Event_1ykcylj" />
+    <bpmn:sequenceFlow id="Flow_1n6a9vd" sourceRef="Activity_0m5xa1z" targetRef="Activity_16bsada" />
+    <bpmn:sequenceFlow id="Flow_0unlome" sourceRef="Activity_16bsada" targetRef="Activity_0641sln" />
+    <bpmn:serviceTask id="Activity_16bsada" name="尝试自修" camunda:type="external" camunda:topic="try_self_repair">
+      <bpmn:extensionElements>
+        <camunda:executionListener delegateExpression="${checkUserAddress}" event="end" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1n6a9vd</bpmn:incoming>
+      <bpmn:outgoing>Flow_0unlome</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:textAnnotation id="TextAnnotation_0ftrzmy">
+      <bpmn:text>后有监听器</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1rq0oy0" sourceRef="Activity_16bsada" targetRef="TextAnnotation_0ftrzmy" />
+    <bpmn:textAnnotation id="TextAnnotation_0vd67ov">
+      <bpmn:text>前有监听器</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1cudwpc" sourceRef="Activity_0641sln" targetRef="TextAnnotation_0vd67ov" />
+  </bpmn:process>
+  <bpmn:error id="Error_0b4r4sr" name="Error_26cj2if" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_external_task">
+      <bpmndi:BPMNShape id="TextAnnotation_0ftrzmy_di" bpmnElement="TextAnnotation_0ftrzmy">
+        <dc:Bounds x="480" y="80" width="100" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0vd67ov_di" bpmnElement="TextAnnotation_0vd67ov">
+        <dc:Bounds x="610" y="80" width="100" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_094ggce" bpmnElement="StartEvent_1">
+        <dc:Bounds x="172" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0b4ecbr_di" bpmnElement="Activity_0m5xa1z">
+        <dc:Bounds x="263" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_05aiiw3_di" bpmnElement="Activity_0641sln">
+        <dc:Bounds x="570" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xx7xth_di" bpmnElement="Activity_072cc7x">
+        <dc:Bounds x="730" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_17fldhp_di" bpmnElement="Activity_0wl2p9o">
+        <dc:Bounds x="890" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ykcylj_di" bpmnElement="Event_1ykcylj">
+        <dc:Bounds x="1052" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1r6lch7_di" bpmnElement="Activity_16bsada">
+        <dc:Bounds x="420" y="160" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1rq0oy0_di" bpmnElement="Association_1rq0oy0">
+        <di:waypoint x="493" y="160" />
+        <di:waypoint x="521" y="110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1cudwpc_di" bpmnElement="Association_1cudwpc">
+        <di:waypoint x="635" y="160" />
+        <di:waypoint x="654" y="110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ahy720_di" bpmnElement="Flow_1ahy720">
+        <di:waypoint x="208" y="200" />
+        <di:waypoint x="263" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qoixeg_di" bpmnElement="Flow_1qoixeg">
+        <di:waypoint x="670" y="200" />
+        <di:waypoint x="730" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1kjpyz0_di" bpmnElement="Flow_1kjpyz0">
+        <di:waypoint x="830" y="200" />
+        <di:waypoint x="890" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_176onr7_di" bpmnElement="Flow_176onr7">
+        <di:waypoint x="990" y="200" />
+        <di:waypoint x="1052" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1n6a9vd_di" bpmnElement="Flow_1n6a9vd">
+        <di:waypoint x="363" y="200" />
+        <di:waypoint x="420" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0unlome_di" bpmnElement="Flow_0unlome">
+        <di:waypoint x="520" y="200" />
+        <di:waypoint x="570" y="200" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

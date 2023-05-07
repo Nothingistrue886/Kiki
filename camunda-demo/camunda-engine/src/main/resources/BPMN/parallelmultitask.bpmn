@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1xk8vv6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_parallel_multi_task" name="多实例并行任务" isExecutable="true">
+    <bpmn:startEvent id="Event_0kz9qq4" camunda:initiator="starter">
+      <bpmn:outgoing>Flow_00huxjn</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_0ftcgzx" name="员工请假" camunda:assignee="${starter}">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="name" label="姓名" type="string" />
+          <camunda:formField id="reason" label="请假原因" type="string" />
+          <camunda:formField id="leaveday" label="请假天数" type="long" defaultValue="1" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_00huxjn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1n8fxwg</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_1c7t7y3">
+      <bpmn:incoming>Flow_1q8pap0</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_0rdsx7o" name="上级审批" camunda:assignee="${leader}">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="approval" label="是否同意" type="boolean" defaultValue="true" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1n8fxwg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1q8pap0</bpmn:outgoing>
+      <bpmn:multiInstanceLoopCharacteristics camunda:collection="${leaderList}" camunda:elementVariable="leader">
+        <bpmn:completionCondition xsi:type="bpmn:tFormalExpression">${nrOfCompletedInstances==2}</bpmn:completionCondition>
+      </bpmn:multiInstanceLoopCharacteristics>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_00huxjn" sourceRef="Event_0kz9qq4" targetRef="Activity_0ftcgzx" />
+    <bpmn:sequenceFlow id="Flow_1n8fxwg" sourceRef="Activity_0ftcgzx" targetRef="Activity_0rdsx7o" />
+    <bpmn:sequenceFlow id="Flow_1q8pap0" sourceRef="Activity_0rdsx7o" targetRef="Event_1c7t7y3" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_parallel_multi_task">
+      <bpmndi:BPMNShape id="BPMNShape_0sp8olc" bpmnElement="Event_0kz9qq4">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1n4cyyo_di" bpmnElement="Activity_0ftcgzx">
+        <dc:Bounds x="243" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1c7t7y3_di" bpmnElement="Event_1c7t7y3">
+        <dc:Bounds x="565" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0yxyeo5_di" bpmnElement="Activity_0rdsx7o">
+        <dc:Bounds x="403" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_00huxjn_di" bpmnElement="Flow_00huxjn">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="243" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1n8fxwg_di" bpmnElement="Flow_1n8fxwg">
+        <di:waypoint x="343" y="120" />
+        <di:waypoint x="403" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1q8pap0_di" bpmnElement="Flow_1q8pap0">
+        <di:waypoint x="503" y="120" />
+        <di:waypoint x="565" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
