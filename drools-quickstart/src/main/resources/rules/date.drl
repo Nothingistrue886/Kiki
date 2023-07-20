@@ -1,0 +1,21 @@
+package rules
+/*
+    用于测试date-effective属性
+*/
+rule "rule_dateeffective_1"
+    date-effective "2023-07-12 12:55"
+    when
+    then
+        System.out.println("规则rule_dateeffective_1触发");
+end
+
+/*
+    用于测试date-expires属性
+*/
+
+rule "rule_dateexpires_1"
+    date-expires "2029-10-01 10:00"
+    when
+    then
+        System.out.println("规则rule_dateexpires_1触发");
+end

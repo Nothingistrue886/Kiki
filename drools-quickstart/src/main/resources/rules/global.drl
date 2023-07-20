@@ -1,0 +1,36 @@
+package rules
+/*
+    此规则文件用于测试global全局变量
+    在使用global定义的全局变量时有两点需要注意：
+    1、如果对象类型为**包装类型**时，在一个规则中改变了global的值，那么**只针对当前规则有效**，对其他规则中的global不会有影响。
+    可以理解为它是当前规则代码中的global副本，规则内部修改不会影响全局的使用。
+    2、如果对象类型为**集合类型或JavaBean**时，在一个规则中改变了global的值，对java代码和所有规则都有效。
+
+*/
+
+
+global java.lang.Integer count //定义一个包装类型的全局变量
+global com.drools.service.UserService userService //定义一个JavaBean类型的全局变量
+global java.util.List gList //定义一个集合类型的全局变量
+global java.util.Map gMap
+
+rule "rule_global_1"
+    when
+    then
+        count += 10; //全局变量计算，只对当前规则有效，其他规则不受影响
+        userService.save();//调用全局变量的方法
+        gList.add("itcast");//向集合类型的全局变量中添加元素，Java代码和所有规则都受影响
+        gList.add("itheima");
+        System.out.println("count=" + count);
+        System.out.println("gList.size=" + gList.size());
+        gMap.put("1Map", count);
+end
+
+rule "rule_global_2"
+    when
+    then
+        userService.save();
+        System.out.println("count=" + count);
+        System.out.println("gList.size=" + gList.size());
+        gMap.put("2Map", count);
+end
