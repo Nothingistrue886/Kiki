@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.lambda;
+package com.czff.study.knowledge.lambda;
 
 public class Person {
 

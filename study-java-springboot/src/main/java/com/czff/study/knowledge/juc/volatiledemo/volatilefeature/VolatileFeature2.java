@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.volatiledemo.volatilefeature;
+package com.czff.study.knowledge.juc.volatiledemo.volatilefeature;
 
 /**
  * @author cuidi

@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.iostream;
+package com.czff.study.knowledge.iostream;
 
 
 import java.io.BufferedInputStream;

@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.lagou.linkedlist.reverselinkedlist;
+package com.czff.study.algorithm.lagou.linkedlist.reverselinkedlist;
 
 
 import java.util.List;

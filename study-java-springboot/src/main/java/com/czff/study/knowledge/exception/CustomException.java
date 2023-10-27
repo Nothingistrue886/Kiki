@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.exception;
+package com.czff.study.knowledge.exception;
 
 /**
  * @author cuidi

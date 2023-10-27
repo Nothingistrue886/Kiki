@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.countdownlatchandsemaphore;
+package com.czff.study.knowledge.juc.countdownlatchandsemaphore;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

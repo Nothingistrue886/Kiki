@@ -1,4 +1,4 @@
-package com.czff.mydemo.util.encryptutil;
+package com.czff.study.util.encryptutil;
 
 import java.util.Base64;
 

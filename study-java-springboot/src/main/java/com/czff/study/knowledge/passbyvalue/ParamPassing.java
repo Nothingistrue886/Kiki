@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.passbyvalue;
+package com.czff.study.knowledge.passbyvalue;
 
 /**
  * @author cuidi

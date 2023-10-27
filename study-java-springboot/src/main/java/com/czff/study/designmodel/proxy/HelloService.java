@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.proxy;
+package com.czff.study.designmodel.proxy;
 
 /**
  * @author cuidi

@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.lagou.linkedlist.linkedlisthascyc;
+package com.czff.study.algorithm.lagou.linkedlist.linkedlisthascyc;
 
 import java.util.HashSet;
 import java.util.Set;

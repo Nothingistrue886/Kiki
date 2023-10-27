@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.stream;
+package com.czff.study.knowledge.stream;
 
 import java.util.*;
 

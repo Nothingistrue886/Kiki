@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.leetcode.easy;
+package com.czff.study.algorithm.leetcode.easy;
 
 import org.apache.commons.lang3.StringUtils;
 

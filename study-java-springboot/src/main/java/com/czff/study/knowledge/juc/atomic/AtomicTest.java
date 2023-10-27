@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.atomic;
+package com.czff.study.knowledge.juc.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;

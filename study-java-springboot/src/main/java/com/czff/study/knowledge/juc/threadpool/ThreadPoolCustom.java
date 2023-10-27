@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.threadpool;
+package com.czff.study.knowledge.juc.threadpool;
 
 import java.util.concurrent.*;
 

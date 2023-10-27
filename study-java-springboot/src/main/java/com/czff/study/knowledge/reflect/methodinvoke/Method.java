@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.reflect.methodinvoke;
+package com.czff.study.knowledge.reflect.methodinvoke;
 
 import java.lang.reflect.InvocationTargetException;
 

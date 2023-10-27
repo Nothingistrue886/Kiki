@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.forkjoin;
+package com.czff.study.knowledge.juc.thread.forkjoin;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;

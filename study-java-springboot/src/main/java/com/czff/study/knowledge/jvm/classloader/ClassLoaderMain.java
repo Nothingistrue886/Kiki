@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.classloader;
+package com.czff.study.knowledge.jvm.classloader;
 
 /**
  * @author cuidi

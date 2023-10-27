@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.newthread;
+package com.czff.study.knowledge.juc.thread.newthread;
 
 import java.util.concurrent.*;
 

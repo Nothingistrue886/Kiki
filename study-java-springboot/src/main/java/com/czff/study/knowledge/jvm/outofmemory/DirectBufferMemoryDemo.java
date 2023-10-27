@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.outofmemory;
+package com.czff.study.knowledge.jvm.outofmemory;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;

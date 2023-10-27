@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.comparator;
+package com.czff.study.knowledge.comparator;
 
 import java.util.Comparator;
 

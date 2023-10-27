@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.yield;
+package com.czff.study.knowledge.juc.thread.yield;
 
 /**
  * @author cuidi

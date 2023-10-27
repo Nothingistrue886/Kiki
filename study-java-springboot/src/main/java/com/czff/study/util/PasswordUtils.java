@@ -1,4 +1,4 @@
-package com.czff.mydemo.util;
+package com.czff.study.util;
 
 /**
  * @author cuidi

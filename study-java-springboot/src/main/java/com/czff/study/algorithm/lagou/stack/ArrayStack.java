@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.lagou.stack;
+package com.czff.study.algorithm.lagou.stack;
 
 /**
  * @author 疾风劲草

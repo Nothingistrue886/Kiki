@@ -1,9 +1,8 @@
-package com.czff.mydemo.designmodel.factorymethod.multiplant;
+package com.czff.study.designmodel.factorymethod.multiplant;
 
-
-import com.czff.mydemo.designmodel.factorymethod.MailSender;
-import com.czff.mydemo.designmodel.factorymethod.Sender;
-import com.czff.mydemo.designmodel.factorymethod.SmsSender;
+import com.czff.study.designmodel.factorymethod.MailSender;
+import com.czff.study.designmodel.factorymethod.Sender;
+import com.czff.study.designmodel.factorymethod.SmsSender;
 
 /**
  * @author cuidi

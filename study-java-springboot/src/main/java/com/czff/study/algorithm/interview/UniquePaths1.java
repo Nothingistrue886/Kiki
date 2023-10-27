@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.interview;
+package com.czff.study.algorithm.interview;
 
 /**
  * @author 疾风劲草

@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.properties;
+package com.czff.study.knowledge.properties;
 
 import java.io.File;
 import java.io.FileInputStream;

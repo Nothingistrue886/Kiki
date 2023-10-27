@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.stringtable;
+package com.czff.study.knowledge.jvm.stringtable;
 
 public class StringPool {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.properties;
+package com.czff.study.knowledge.properties;
 
 /**
  * @author cuidi

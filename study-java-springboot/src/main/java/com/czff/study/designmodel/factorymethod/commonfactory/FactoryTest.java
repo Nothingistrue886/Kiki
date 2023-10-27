@@ -1,7 +1,6 @@
-package com.czff.mydemo.designmodel.factorymethod.commonfactory;
+package com.czff.study.designmodel.factorymethod.commonfactory;
 
-
-import com.czff.mydemo.designmodel.factorymethod.Sender;
+import com.czff.study.designmodel.factorymethod.Sender;
 
 /**
  * @author cuidi

@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.gc;
+package com.czff.study.knowledge.jvm.gc;
 
 /**
  * @author 疾风劲草

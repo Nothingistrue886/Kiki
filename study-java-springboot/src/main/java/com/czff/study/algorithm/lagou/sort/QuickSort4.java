@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.lagou.sort;
+package com.czff.study.algorithm.lagou.sort;
 
 import java.util.Arrays;
 

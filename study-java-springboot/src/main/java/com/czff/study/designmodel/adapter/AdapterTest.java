@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.adapter;
+package com.czff.study.designmodel.adapter;
 
 import java.util.concurrent.Callable;
 

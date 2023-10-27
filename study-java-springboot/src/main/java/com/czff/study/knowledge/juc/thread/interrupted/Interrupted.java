@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.interrupted;
+package com.czff.study.knowledge.juc.thread.interrupted;
 
 import java.util.concurrent.TimeUnit;
 

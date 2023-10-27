@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.interview.string;
+package com.czff.study.algorithm.interview.string;
 
 import org.apache.commons.lang3.StringUtils;
 

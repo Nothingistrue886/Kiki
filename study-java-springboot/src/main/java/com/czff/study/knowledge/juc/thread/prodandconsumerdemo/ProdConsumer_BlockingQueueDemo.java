@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.prodandconsumerdemo;
+package com.czff.study.knowledge.juc.thread.prodandconsumerdemo;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

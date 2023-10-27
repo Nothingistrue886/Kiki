@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.proxy;
+package com.czff.study.designmodel.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

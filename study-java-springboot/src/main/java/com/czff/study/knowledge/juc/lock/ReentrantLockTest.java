@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.lock;
+package com.czff.study.knowledge.juc.lock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;

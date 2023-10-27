@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.collection;
+package com.czff.study.knowledge.collection;
 
 import java.util.Arrays;
 import java.util.List;

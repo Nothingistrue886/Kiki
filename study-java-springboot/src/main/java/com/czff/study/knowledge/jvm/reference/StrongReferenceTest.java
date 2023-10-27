@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.reference;
+package com.czff.study.knowledge.jvm.reference;
 
 /**
  *  强引用的测试

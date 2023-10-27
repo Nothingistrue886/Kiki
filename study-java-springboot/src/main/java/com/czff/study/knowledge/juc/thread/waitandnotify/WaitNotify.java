@@ -1,8 +1,7 @@
-package com.czff.mydemo.knowledge.juc.thread.waitandnotify;
+package com.czff.study.knowledge.juc.thread.waitandnotify;
 
 
-
-import com.czff.mydemo.knowledge.juc.thread.interrupted.SleepUtils;
+import com.czff.study.knowledge.juc.thread.interrupted.SleepUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

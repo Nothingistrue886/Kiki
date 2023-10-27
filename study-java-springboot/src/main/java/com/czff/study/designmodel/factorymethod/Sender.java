@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.factorymethod;
+package com.czff.study.designmodel.factorymethod;
 
 /**
  * @author cuidi

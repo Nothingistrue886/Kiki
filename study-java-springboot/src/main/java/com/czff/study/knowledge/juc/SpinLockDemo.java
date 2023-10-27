@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc;
+package com.czff.study.knowledge.juc;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;

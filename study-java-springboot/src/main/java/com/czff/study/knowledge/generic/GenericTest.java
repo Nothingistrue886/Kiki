@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.generic;
+package com.czff.study.knowledge.generic;
 
 /**
  * @description 泛型 https://www.cnblogs.com/coprince/p/8603492.html

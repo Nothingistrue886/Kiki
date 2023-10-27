@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.volatiledemo;
+package com.czff.study.knowledge.juc.volatiledemo;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

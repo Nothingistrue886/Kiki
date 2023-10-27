@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.reflect.color;
+package com.czff.study.knowledge.reflect.color;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

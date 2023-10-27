@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.deadlock;
+package com.czff.study.knowledge.juc.deadlock;
 
 import java.util.concurrent.TimeUnit;
 

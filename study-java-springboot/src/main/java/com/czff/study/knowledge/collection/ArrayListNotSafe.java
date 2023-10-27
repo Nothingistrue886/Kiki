@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.collection;
+package com.czff.study.knowledge.collection;
 
 import java.util.List;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package com.czff.mydemo.util.sensitiveutil;
+package com.czff.study.util.sensitiveutil;
 
 import lombok.Data;
 

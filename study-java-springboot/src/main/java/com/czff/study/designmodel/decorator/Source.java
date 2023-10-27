@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.decorator;
+package com.czff.study.designmodel.decorator;
 
 /**
  * @author cuidi

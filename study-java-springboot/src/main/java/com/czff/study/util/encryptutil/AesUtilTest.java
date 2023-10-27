@@ -1,4 +1,4 @@
-package com.czff.mydemo.util.encryptutil;
+package com.czff.study.util.encryptutil;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;

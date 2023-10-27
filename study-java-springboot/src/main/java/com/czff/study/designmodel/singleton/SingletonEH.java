@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.singleton;
+package com.czff.study.designmodel.singleton;
 
 /**
  * 单例模式，属于创建类型的一种常用的软件设计模式。

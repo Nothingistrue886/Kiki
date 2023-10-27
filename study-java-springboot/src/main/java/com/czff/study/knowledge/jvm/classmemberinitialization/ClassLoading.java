@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.classmemberinitialization;
+package com.czff.study.knowledge.jvm.classmemberinitialization;
 
 /**
  * @author cuidi

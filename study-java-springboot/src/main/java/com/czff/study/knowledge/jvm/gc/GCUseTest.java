@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.gc;
+package com.czff.study.knowledge.jvm.gc;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.reflect.person;
+package com.czff.study.knowledge.reflect.person;
 
 import java.lang.reflect.Field;
 

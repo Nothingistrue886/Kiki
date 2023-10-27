@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.singleton;
+package com.czff.study.designmodel.singleton;
 
 /**
  * 默认枚举实例的创建是线程安全的，并且在任何情况下都是单例。

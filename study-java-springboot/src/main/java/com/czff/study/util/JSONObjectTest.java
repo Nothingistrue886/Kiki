@@ -1,4 +1,4 @@
-package com.czff.mydemo.util;
+package com.czff.study.util;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONArray;

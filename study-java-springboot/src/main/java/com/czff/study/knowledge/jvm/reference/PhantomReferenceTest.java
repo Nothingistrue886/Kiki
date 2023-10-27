@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.reference;
+package com.czff.study.knowledge.jvm.reference;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;

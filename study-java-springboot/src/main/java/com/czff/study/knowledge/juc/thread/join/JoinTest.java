@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.join;
+package com.czff.study.knowledge.juc.thread.join;
 
 import lombok.SneakyThrows;
 

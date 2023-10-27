@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.jvm.outofmemory;
+package com.czff.study.knowledge.jvm.outofmemory;
 
 import sun.misc.Unsafe;
 

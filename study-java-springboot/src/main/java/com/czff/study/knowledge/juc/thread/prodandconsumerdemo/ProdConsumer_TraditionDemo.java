@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.prodandconsumerdemo;
+package com.czff.study.knowledge.juc.thread.prodandconsumerdemo;
 
 /**
  * @author cuidi

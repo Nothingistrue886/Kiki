@@ -1,4 +1,4 @@
-package com.czff.mydemo.designmodel.singleton;
+package com.czff.study.designmodel.singleton;
 
 /**
  * 懒汉模式：

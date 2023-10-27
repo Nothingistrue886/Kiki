@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.collection.listarrayconversion;
+package com.czff.study.knowledge.collection.listarrayconversion;
 
 import java.util.ArrayList;
 import java.util.Arrays;

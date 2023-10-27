@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.threadlocal;
+package com.czff.study.knowledge.juc.threadlocal;
 
 import java.util.concurrent.TimeUnit;
 

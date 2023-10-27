@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.reflect;
+package com.czff.study.knowledge.reflect;
 
 /**
  * @author cuidi

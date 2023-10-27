@@ -1,4 +1,4 @@
-package com.czff.mydemo.algorithm.interview;
+package com.czff.study.algorithm.interview;
 
 import java.util.ArrayList;
 import java.util.List;

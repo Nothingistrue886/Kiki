@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.python;
+package com.czff.study.knowledge.python;
 
 
 import cn.hutool.core.io.FileUtil;

@@ -1,4 +1,4 @@
-package com.czff.mydemo.util.hutool.http;
+package com.czff.study.util.hutool.http;
 
 import cn.hutool.http.HttpRequest;
 

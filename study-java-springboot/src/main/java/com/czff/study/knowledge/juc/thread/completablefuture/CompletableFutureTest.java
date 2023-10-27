@@ -1,4 +1,4 @@
-package com.czff.mydemo.knowledge.juc.thread.completablefuture;
+package com.czff.study.knowledge.juc.thread.completablefuture;
 
 
 import java.util.concurrent.CompletableFuture;
