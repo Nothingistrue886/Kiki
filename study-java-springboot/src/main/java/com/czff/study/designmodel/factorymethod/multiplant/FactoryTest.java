@@ -1,6 +1,7 @@
 package com.czff.mydemo.designmodel.factorymethod.multiplant;
 
-import com.czff.study.designmodel.factorymethod.Sender;
+
+import com.czff.mydemo.designmodel.factorymethod.Sender;
 
 /**
  * @author cuidi

@@ -1,8 +1,6 @@
 package com.czff.mydemo.knowledge.reflect.annotation;
 
 
-import com.czff.study.knowledge.reflect.annotation.Person;
-import com.czff.study.knowledge.reflect.annotation.Report;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
