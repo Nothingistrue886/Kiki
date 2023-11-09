@@ -2,7 +2,7 @@ package com.czff.study.algorithm.interview;
 
 /**
  * @author 疾风劲草
- * @date 2022/6/29 16:30
+ * @date 2022/6/29 16:31
  * @description 跳跃游戏Ⅰ
  * https://leetcode.cn/problems/jump-game/solution/tiao-yue-you-xi-by-leetcode-solution/
  */
