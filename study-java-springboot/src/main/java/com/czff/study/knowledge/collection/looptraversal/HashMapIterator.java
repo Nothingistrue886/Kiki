@@ -13,22 +13,28 @@ import java.util.Map;
 public class HashMapIterator {
     public static void main(String[] args) {
 
-        Map<String, String> map = new HashMap<>(16);
         ArrayList<Student> students = new ArrayList<>(16);
+        Map<String, String> map = new HashMap<>(16);
         map.put("1", "a");
         map.put("2", "b");
         map.put("3", "c");
         map.put("4", "d");
 
-        entrySet(map, students);
-        for (Student s : students) {
-            System.out.println(s.getId() + ":::::" + s.getName());
-        }
-        System.out.println("=======================================");
+
+
         useIterator(map, students);
         for (Student s : students) {
             System.out.println(s.getId() + "-----" + s.getName());
         }
+
+        System.out.println("=======================================");
+
+        students.clear();
+        entrySet(map, students);
+        for (Student s : students) {
+            System.out.println(s.getId() + ":::::" + s.getName());
+        }
+
     }
 
     /**
@@ -42,10 +48,13 @@ public class HashMapIterator {
             Map.Entry<String, String> entry = it.next();
             String key = entry.getKey();
             String value = entry.getValue();
-            if("b".equals(value)) continue;
-            student.setId(key);
-            student.setName(value);
-            students.add(student);
+            if("b".equals(value)) {
+                it.remove();
+            } else {
+                student.setId(key);
+                student.setName(value);
+                students.add(student);
+            }
         }
     }
 
