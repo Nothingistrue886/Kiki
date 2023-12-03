@@ -3,7 +3,7 @@ package com.czff.study.designmodel.strategy;
 /**
  * @author 疾风劲草
  * @date 2023/11/30 15:53
- * @description
+ * @description 具体策略
  */
 public class OperationMultiply implements Strategy{
     @Override
