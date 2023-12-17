@@ -26,8 +26,8 @@ public class ThreadPoolTest {
         ThreadPoolExecutor threadPoolSecond = new ThreadPoolExecutor(1, 2, 60, TimeUnit.SECONDS, queue, factory2, handler);
 
         Runnable task = new UserTask();
-        for (int i = 0; i < 10; i++) {
-            threadPoolFirst.execute(task);
+        for (int i = 0; i < 1; i++) {
+//            threadPoolFirst.execute(task);
             threadPoolSecond.execute(task);
         }
     }
