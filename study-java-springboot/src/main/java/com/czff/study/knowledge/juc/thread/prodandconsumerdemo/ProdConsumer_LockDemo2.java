@@ -7,7 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author 疾风劲草
  * @date 2023/12/17 22:30
- * @description Condition精准通知与唤醒线程
+ * @description
+ * Condition精准通知与唤醒线程
  * A执行完调用B，B执行完调用C，C执行完调用A
  */
 public class ProdConsumer_LockDemo2 {

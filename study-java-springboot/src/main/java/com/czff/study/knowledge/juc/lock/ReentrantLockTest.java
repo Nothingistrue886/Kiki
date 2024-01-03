@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author 疾风劲草
  * @date 2022/6/2 19:59
- * @description 多线程实现，打印10次ABC
+ * @description 多线程实现，打印10次ABC, 可以参考com.czff.study.knowledge.juc.thread.prodandconsumerdemo.ProdConsumer_LockDemo2
  */
 public class ReentrantLockTest {
 
