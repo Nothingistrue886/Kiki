@@ -15,5 +15,6 @@ public class ClassLoading {
          * 4. 最后执行构造器，构造器执行完毕，对象初始化完成。
          */
         Son son = new Son();
+
     }
 }

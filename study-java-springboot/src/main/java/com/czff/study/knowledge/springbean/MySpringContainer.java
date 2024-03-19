@@ -1,5 +1,6 @@
 package com.czff.study.knowledge.springbean;
 
+import com.czff.study.knowledge.springbean.aop.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
