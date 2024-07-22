@@ -5,7 +5,6 @@ package com.czff.study.knowledge.jvm.outofmemoryerror;
  * @date 2022/5/13 11:40
  * @description 初始内存大小：物理内存大小/64
  *              最大内存大小：物理内存大小/4
- *
  *  查看内存参数 方式一：
  *              jsp
  *              jstat -gc PID
