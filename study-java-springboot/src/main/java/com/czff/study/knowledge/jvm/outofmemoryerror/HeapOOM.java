@@ -1,4 +1,4 @@
-package com.czff.study.knowledge.jvm.outofmemory;
+package com.czff.study.knowledge.jvm.outofmemoryerror;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -6,7 +6,9 @@ import java.util.Random;
 /**
  * @author 疾风劲草
  * @date 2022/5/13 11:05
- * @description vm args: -Xmx10m -Xms10m -XX:+PrintGCDetails
+ * @description 堆内存溢出
+ * vm args: -Xmx10m -Xms10m -XX:+PrintGCDetails
+ * java.lang.OutOfMemoryError: Java heap space
  */
 public class HeapOOM {
 

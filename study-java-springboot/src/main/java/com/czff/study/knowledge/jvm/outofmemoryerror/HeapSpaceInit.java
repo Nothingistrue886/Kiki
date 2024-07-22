@@ -1,17 +1,20 @@
-package com.czff.study.knowledge.jvm.gc;
+package com.czff.study.knowledge.jvm.outofmemoryerror;
 
 /**
  * @author 疾风劲草
- * @date 2021/7/22 20:57
- * @description
- * case: -Xms128m -Xmx4096m -Xss1024k -XX:MetaSpaceSize=512m -XX:+PrintCommandLineFlags -XX:+PrintGCDetails -XX:+UseSerialGC
+ * @date 2022/5/13 11:40
+ * @description 初始内存大小：物理内存大小/64
+ *              最大内存大小：物理内存大小/4
+ *
+ *  查看内存参数 方式一：
+ *              jsp
+ *              jstat -gc PID
+ *              方式二：
+ *              -XX:+PrintGCDetails
  */
-public class HelloGc {
-    public static void main(String[] args) throws InterruptedException {
+public class HeapSpaceInit {
 
-        System.out.println("-------HelloGc");
-
-//        Thread.sleep(Integer.MAX_VALUE);
+    public static void main(String[] args) {
 
         // 返回java虚拟机中的内存总量(物理内存的1/64)
         long totalMemory = Runtime.getRuntime().totalMemory();

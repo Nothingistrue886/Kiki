@@ -1,9 +1,8 @@
 package com.czff.study.knowledge.jvm.classloader;
 
-import sun.misc.Launcher;
-
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.net.URLClassLoader;
 
 /**
  * @author cuidi
@@ -11,45 +10,44 @@ import java.net.URL;
  * @description
  */
 public class ClassTest {
-    private static int[] array = new int[3];
-    private static int length = array.length;
 
-    private static Class<One> oneClass = One.class;
-    private static Class<Another> anotherClass = Another.class;
-
-    public static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchFieldException {
-        One oneObject = oneClass.newInstance();
+    public static void main(String[] args) throws Exception {
+        One oneObject = One.class.getDeclaredConstructor().newInstance();
         oneObject.call();
 
-        Another anotherObject = anotherClass.newInstance();
+        Another anotherObject = Another.class.getDeclaredConstructor().newInstance();
         anotherObject.speak();
 
-        Field field = oneClass.getDeclaredField("inner");
+        Field field = One.class.getDeclaredField("inner");
         field.setAccessible(true);
         field.set(oneObject, "world changed");
         System.out.println(oneObject.getInner());
         System.out.println("<===================================================>");
 
         // 查看Bootstrap所有已加载的类库
-        URL[] urLs = Launcher.getBootstrapClassPath().getURLs();
+//        URL[] urLs = Launcher.getBootstrapClassPath().getURLs(); // jdk1.8
+        URLClassLoader bootstrapClassLoader = (URLClassLoader) ClassLoader.getSystemClassLoader().getParent();
+        URL[] urLs = bootstrapClassLoader.getURLs();
         for (URL urL : urLs) {
             System.out.println(urL.toString());
         }
         System.out.println("<===================================================>");
 
         // 查看本地类加载器
-        ClassLoader classLoader = oneClass.getClassLoader();
+        ClassLoader classLoader = One.class.getClassLoader();
         ClassLoader extension = classLoader.getParent();
         ClassLoader root = extension.getParent();
 
-        System.out.println(classLoader.toString());
-        System.out.println(extension.toString());
+        System.out.println(classLoader);
+        System.out.println(extension);
         System.out.println(root.toString());
 
     }
 
-    class One {
+    static class One {
         private String inner = "time files";
+
+        public One() {}
 
         void call() {
             System.out.println("hello world!");
@@ -60,7 +58,10 @@ public class ClassTest {
         }
     }
 
-    class Another {
+    static class Another {
+
+        public Another() {}
+
         void speak() {
             System.out.println("easy coding");
         }
