@@ -1,4 +1,4 @@
-package com.czff.study.knowledge.stream;
+package com.czff.study.knowledge.features.jdk8.stream;
 
 import java.util.*;
 
