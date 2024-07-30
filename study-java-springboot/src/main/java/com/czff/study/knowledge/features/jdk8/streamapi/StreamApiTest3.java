@@ -2,8 +2,8 @@ package com.czff.study.knowledge.features.jdk8.streamapi;
 
 /**
  * @author 疾风劲草
- * @date 2024/7/29 14:00
- * @description 创建Stream
+ * @date 2024/7/30 10:34
+ * @description 终止操作
  **/
-public class StreamapiTest1 {
+public class StreamApiTest3 {
 }
